@@ -17,6 +17,8 @@ public class anagramsNumeric {
      **/
 
     public static void main(String[] args) {
+
+        String name = "hola como andas";
         String line = "123 456 231 546 231 312 4556";
         anagramNumbers(line);
     }
