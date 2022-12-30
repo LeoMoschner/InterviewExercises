@@ -28,9 +28,8 @@ public class lettersBrackets {
     public static String lettersMultipliedI(String input){
         //for this first case i will use 2 indexes because i will need to get
         //the opening and closing brackets.
-        int open, close;
-        open = input.indexOf("[");
-        close = input.indexOf("]");
+        int open=input.indexOf("[");
+        int close = input.indexOf("]");
 
         //now i have to multiply what are inside the open and close, with the number
         String middleWord = input.substring(open+1, close);
