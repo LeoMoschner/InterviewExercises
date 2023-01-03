@@ -22,7 +22,7 @@ public class lettersBrackets {
         String inputTwo = "2[a]2[b]";
         String inputThree = "2[a]2[b2[c]]";
         System.out.println(lettersMultipliedI(input));
-        System.out.println(lettersMultiplieII(inputTwo));
+        //System.out.println(lettersMultiplieII(inputTwo));
     }
 
     public static String lettersMultipliedI(String input){
@@ -32,6 +32,8 @@ public class lettersBrackets {
         open = input.indexOf("[");
         close = input.indexOf("]");
 
+        System.out.println(open);
+        System.out.println(close);
         //now i have to multiply what are inside the open and close, with the number
         String middleWord = input.substring(open+1, close);
         input= middleWord.repeat(Character.getNumericValue(input.charAt(open-1)));
