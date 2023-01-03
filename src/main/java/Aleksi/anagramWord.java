@@ -1,4 +1,4 @@
 package Aleksi;
 
-public class anagramWord {
+public class anagramWord { //hola
 }
