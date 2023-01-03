@@ -33,7 +33,6 @@ public class imagePixels {
         }
         return result;
     }
-
     public static int avg(int[][] image, int x, int y) {
         int sum = 0;
         for (int i = x; i <= x+2; i++) {
