@@ -22,7 +22,7 @@ public class lettersBrackets {
         String inputTwo = "2[a]2[b]";
         String inputThree = "2[a]2[b2[c]]";
         System.out.println(lettersMultipliedI(input));
-        System.out.println(lettersMultiplieII(inputTwo));
+        System.out.println(lettersMultiplieII(inputThree));
     }
 
     public static String lettersMultipliedI(String input){
@@ -43,7 +43,7 @@ public class lettersBrackets {
         //For resolving the third case, i just need to change the open integer method.
         // open=input.lastIndexOf(openBracket);
         while (input.contains(openBracket)) {
-            open = input.indexOf(openBracket);
+            open = input.lastIndexOf(openBracket);
             close = input.indexOf("]", open);
 
             String middleWord = input.substring(open + 1, close);
