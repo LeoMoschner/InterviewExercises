@@ -24,14 +24,6 @@ public class anagramsNumeric {
         String line = "123 456 231 546 231 312 4556";
         anagramNumbers(line);
     }
-
-
-
-
-
-
-
-
     public static void anagramNumbers(String number) {
 
         //i will create a string array with the string number i receive, using split.
