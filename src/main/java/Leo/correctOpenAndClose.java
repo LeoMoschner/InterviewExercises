@@ -18,7 +18,6 @@ public class correctOpenAndClose {
         System.out.println(openAndClose(inputTwo));
         System.out.println(openAndClose(inputThree));
         System.out.println(openAndClose(inputFour));
-
     }
 
 
