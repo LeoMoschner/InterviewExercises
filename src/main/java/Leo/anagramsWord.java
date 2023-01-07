@@ -58,8 +58,6 @@ public class anagramsWord {
             firstMap.put(i, firstAux[i]);
             secondMap.put(i, secondAux[i]);
         }
-        System.out.println(firstMap);
-        System.out.println(secondMap);
         return firstMap.equals(secondMap);
     }
     public static boolean isAnagramMapII(String first, String second) {
@@ -80,8 +78,7 @@ public class anagramsWord {
                 secondAux.put(second.charAt(i), 1);
             }
         }
-        System.out.println(firstAux);
-        System.out.println(secondAux);
+
         return firstAux.equals(secondAux);
     }
 

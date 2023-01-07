@@ -10,8 +10,6 @@ public class twoSum {
     int [] myArray = {3, 5, 1, 3, 7, 10};
     positions(myArray, 8);
     }
-
-
     public static List<Integer[]> positions (int[] numbers, int target){
         List<Integer[]> myList = new ArrayList<>();
         Map<Integer, Integer> mapNumbers = new HashMap<>();
@@ -22,7 +20,6 @@ public class twoSum {
                 Integer [] auxArray= new Integer[2];
                 auxArray[0]= i;
                 auxArray[1] = mapNumbers.get(target-numbers[i]);
-
                 myList.add(auxArray);
             }
         }
