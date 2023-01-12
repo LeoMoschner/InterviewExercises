@@ -22,7 +22,6 @@ public class isogram {
 
     }
 
-
     //So, basically if an isogram is a word that have no repetitive letters, i am thinking about  using a Set.
     // This interface contains the methods inherited from the Collection interface
     // and adds a feature that restricts the insertion of the duplicate elements.

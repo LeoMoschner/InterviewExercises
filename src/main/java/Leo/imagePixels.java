@@ -14,14 +14,11 @@ public class imagePixels {
 
 
     public static void main(String[] args) {
-
         int [][] image = {{7, 4, 0, 1},
                          {5, 6, 2, 2},
                          {6, 10, 7, 8},
                         {1, 4, 2, 0}};
-
         System.out.println(Arrays.deepToString(solution(image)));
-
     }
 
      public static int[][] solution(int[][] image) {

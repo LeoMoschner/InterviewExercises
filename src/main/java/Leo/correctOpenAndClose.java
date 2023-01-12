@@ -15,18 +15,14 @@ public class correctOpenAndClose {
         String inputTwo = "()[]{(()()}{)}";
         String inputThree = "(({[]}))";
         String inputFour = "{}[]()()";
-        System.out.println(openAndClose(inputTwo));
-        System.out.println(openAndClose(inputThree));
-        System.out.println(openAndClose(inputFour));
+        String inputFelipe = "{(}[]())()";
+        System.out.println(openAndCloseAll(inputFelipe));
+
     }
-
-
-    //This solution works only with a order input. Not work for "))(("
-    public static boolean openAndClose(String input) {
+    public static boolean openAndCloseAll(String input) {
         if (!(input.length() % 2 == 0)) return false;
-
         Stack<Character> myStack = new Stack<>();
-
+                    //{(}[]())()
         for (int i = 0; i < input.length(); i++) {
             char x = input.charAt(i);
 
@@ -36,7 +32,6 @@ public class correctOpenAndClose {
             }
 
             if (myStack.empty()) return false;
-
             switch (x) {
                 case ')':
                     if (myStack.pop() != '(') {

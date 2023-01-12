@@ -24,55 +24,69 @@ public class coins {
     // ej falopa. 1) i will save the menu in two arrays, one for product and other for price
     // 1') Since the positions will be similar listProd[o] listPrice[0].
     // 2) In a for loop ask for the next element and if the money is available, add it.
-    //
 
 
     //No, it will work, but i am not really sure about it. It will be better to use a map
     //like Map<String, Integer> Menu . Create a list just with the products Name, to
     // iterate after in my Menu (since i have the menu, i can use keySet() method from map)
     //that creates a Set from the map keys.
-    //
     // So First i will create a map to add everything in the menu
-    //
-    //
-    // So
-    public static void main(String[] args) {
 
+    public static void main(String[] args) {
 
         Map<String, Integer> myMenu = new HashMap<>();
         myMenu.put("Coffe", 100);
         myMenu.put("Cake", 200);
         myMenu.put("PopCorn", 225);
 
-        creatCombinatios(myMenu, 400);
+        createCombinatios(myMenu, 500);
     }
 
-    public static void creatCombinatios(Map<String, Integer> menuProducts, int money){
-
-        List<String> names = new ArrayList <>();
-
-        for(String products: menuProducts.keySet()){
-            names.add(products);
+    public static void createCombinatios(Map<String, Integer> menuProducts, int moneyAvailable){
+        List<String> listOfProducts = new ArrayList <>();
+        for(String product: menuProducts.keySet()){
+            listOfProducts.add(product);
         }
 
-        for(String name : names){
-            System.out.println("original map" + menuProducts);
-            menuProducts.remove(name);
-            int wastedMoney=0;
-            String combiinations = "";
+        for(String actualProduct : listOfProducts){
+            int combinationCost=0;
+            int actualProductPrice = menuProducts.get(actualProduct); //Coffe -> 100;
+            menuProducts.remove(actualProduct);  //remuevo coffe.
 
-            for(Map.Entry<String, Integer> data : menuProducts.entrySet()){
-                wastedMoney += data.getValue();
-                combiinations = combiinations + data.getKey();
+            for (Map.Entry<String, Integer> prodPrice : menuProducts.entrySet()) {
+                combinationCost += prodPrice.getValue();
+            }    //Entramos con cake - popcorn -> 200 + 225 =425
+
+            if(combinationCost<=moneyAvailable){  //425<moneyAvailable (500)
+                System.out.println("this combination cost: " + combinationCost);
+                for(Map.Entry<String, Integer> data : menuProducts.entrySet()){ //menuProduct = cake-pop
+                    System.out.print(" - " + data.getKey());
+                }
             }
-
-            if(wastedMoney<money){
-                System.out.println(combiinations);
-            }
-            System.out.println("last map" + menuProducts);
-
+            menuProducts.put(actualProduct, actualProductPrice);
+            System.out.println(" ");
         }
     }
-
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
