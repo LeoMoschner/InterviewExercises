@@ -14,7 +14,7 @@ package Lean;
  * ## output => “abbabbabb” (edited)
  */
 
-public class lettersBrackets {
+public class LettersBrackets {
 
     public static void main(String[] args) {
 

@@ -2,7 +2,7 @@ package Lean;
 
 import java.util.Stack;
 
-public class correctOpenAndClose {
+public class CorrectOpenAndClose {
     /**
      * String input = "[(]{)}()"
      * see if every time there is open bracket, there is a closed one after,

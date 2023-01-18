@@ -1,6 +1,6 @@
 package Lean;
 
-public class coins {
+public class Coins {
 
     /**
     Coins = 400;

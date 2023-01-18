@@ -6,7 +6,7 @@ import java.util.Set;
 /**
 * Check that all elements of an array are unic.
  * */
-public class UnicArrayElements {
+public class UniqueArrayElements {
     public static void main(String[] args) {
         int [] input = {1, 2, 3, 3};
         System.out.println(solution(input));

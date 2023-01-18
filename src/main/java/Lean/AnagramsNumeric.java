@@ -2,7 +2,7 @@ package Lean;
 
 import java.util.*;
 
-public class anagramsNumeric {
+public class AnagramsNumeric {
     /**
      * Input:
      * String line = "123 456 231 546 231 312 4556";
