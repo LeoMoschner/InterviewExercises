@@ -12,11 +12,13 @@ public class correctOpenAndClose {
 
     public static void main(String[] args) {
         String input = "()[])(";
-        String inputTwo = "()[]{(()()}{)}";
-        String inputThree = "(({[]}))";
+        String inputTwo = "()[]{(())}{()}";
+        String inputThree = "(({[))]}))";
         String inputFour = "{}[]()()";
         String inputFelipe = "{(}[]())()";
-        System.out.println(openAndCloseAll(inputFelipe));
+        //System.out.println(openAndCloseAll(inputFelipe));
+
+        System.out.println(justOneChar('[', ']', inputThree));
 
     }
     public static boolean openAndCloseAll(String input) {
@@ -51,5 +53,25 @@ public class correctOpenAndClose {
             }
         }
         return (myStack.isEmpty());
+    }
+
+    public static boolean justOneChar(char openChar, char closeChar, String input){
+        if (!(input.length() % 2 == 0)) return false;
+        Stack<Character> myStack = new Stack<>();
+        for (int i = 0; i < input.length(); i++) {
+            char x = input.charAt(i);
+            if (x == openChar) {
+                myStack.push(x);
+                continue;
+            }else {
+                if(x !=openChar && x!=closeChar) continue;
+            }
+
+            if (myStack.empty()) return false;
+            if ( x== closeChar) myStack.pop();
+            }
+
+        return (myStack.isEmpty());
+
     }
 }

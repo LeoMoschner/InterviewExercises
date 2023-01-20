@@ -31,7 +31,21 @@ public class images {
 
 public static int [] imageSearch(int[][] image){
 
+    int positions [] = new int[4];
 
+        for (int i=0; i<image[0].length; i ++){
+            for (int j=i+1; j<image.length; j++){
+
+
+
+
+
+
+            }
+
+
+
+        }
 
 
 

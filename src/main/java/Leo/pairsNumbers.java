@@ -9,7 +9,7 @@ public class pairsNumbers {
 
     public static void main(String[] args) {
 
-        //moverse con dos if....
+        //moverse con dos for....
 
 
     }
