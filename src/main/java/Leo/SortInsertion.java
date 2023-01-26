@@ -2,7 +2,7 @@ package Leo;
 
 import java.util.*;
 
-public class sortInsertion {
+public class SortInsertion {
 
 
     //Insertion sort, compare cic

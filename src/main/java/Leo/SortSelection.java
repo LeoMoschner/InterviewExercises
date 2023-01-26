@@ -2,7 +2,7 @@ package Leo;
 
 import java.util.Arrays;
 
-public class sortSelection {
+public class SortSelection {
 
 
     public static void main(String[] args) {

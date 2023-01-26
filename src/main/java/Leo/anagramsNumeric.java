@@ -1,8 +1,6 @@
 package Leo;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class anagramsNumeric {
 
@@ -22,7 +20,39 @@ public class anagramsNumeric {
             // finally print if It's, or it's not anagram.
 
         String line = "123 456 231 546 312 4556";
-        anagramNumbers(line);
+        solution2(line);
+    }
+
+    public static void solution2(String line){
+        String[] splitted = line.split(" ");
+        Map<String,String> map = new HashMap<>();
+        for (int i = 0; i < splitted.length; i++){
+            char[] solution = splitted[i].toCharArray();
+            Arrays.sort(solution);
+            String sorted = new String(solution);
+            if(map.containsKey(sorted)){
+                String aux = map.get(sorted);
+                aux = aux + " "  + splitted[i];
+                map.put(sorted,aux);
+            }else{
+                map.put(sorted,splitted[i]);
+            }
+        }
+        for (Map.Entry<String,String> entry : map.entrySet()) {
+            System.out.println(entry.getValue());
+            if (entry.getValue().split(" ").length>1){
+                System.out.println("Are numeric anagrams");
+            }else {
+                System.out.println("Has no anagrams");
+            }
+        }
+    }
+    public static boolean isAnagram (String first, String second){
+        char [] firstNumber = first.toCharArray();
+        char [] secondNumber = second.toCharArray();
+        Arrays.sort(firstNumber);
+        Arrays.sort(secondNumber);
+        return Arrays.equals(firstNumber, secondNumber);
     }
     public static void anagramNumbers(String number) {
 
@@ -51,13 +81,7 @@ public class anagramsNumeric {
     // this method will receive 2 strings (the two numbers to compare).
     //create 1 char array for each one, just to sort them using Arrays.sort
     //finally return using equals.
-    public static boolean isAnagram (String first, String second){
-        char [] firstNumber = first.toCharArray();
-        char [] secondNumber = second.toCharArray();
-        Arrays.sort(firstNumber);
-        Arrays.sort(secondNumber);
-        return Arrays.equals(firstNumber, secondNumber);
-    }
+
 
 
 

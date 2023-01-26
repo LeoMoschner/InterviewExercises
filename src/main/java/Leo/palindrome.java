@@ -18,9 +18,15 @@ public class palindrome {
     public static void main(String[] args) {
 
         String one = "menen";
+        System.out.println("Esto es MENEN");
         System.out.println(isPalindrome(one));
-
         System.out.println(isPalHashMap(one));
+        System.out.println(one.charAt(0));
+
+        String two = "neuquen";
+        System.out.println("Esto es neuquen");
+        System.out.println(isPalindrome(two));
+        System.out.println(isPalHashMap(two));
     }
     public static boolean isPalindrome (String word){
         //i will put everything in lower case. Because an Upper Case letter will return false
@@ -36,7 +42,7 @@ public class palindrome {
 
     public static boolean isPalHashMap(String word){
         //i will put everything in lower case. Because an Upper Case letter will return false
-        word.toLowerCase();
+        word.toLowerCase();  //recibo MENEM -----> al reves en un getvalue(i) vs word.charAt(i)
 
         //I can create two maps, overload reading normal and from the end to beginning.
         Map<Integer, Character> wordMap = new HashMap<>();
@@ -46,7 +52,6 @@ public class palindrome {
             wordMap.put(i, word.charAt(i));
             reverseMap.put(i, word.charAt(word.length()-1-i));
         }
-
         return wordMap.equals(reverseMap);
     }
 

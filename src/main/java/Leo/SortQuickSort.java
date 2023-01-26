@@ -2,7 +2,7 @@ package Leo;
 
 import java.util.Arrays;
 
-public class sortQuickSort {
+public class SortQuickSort {
     public static void main(String[] args) {
         int[] myArray = {10, 4, 55, 12, 50, 5};
         quickSort(myArray, 0, (myArray.length - 1));

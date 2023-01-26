@@ -39,7 +39,7 @@ public class coins {
         myMenu.put("Cake", 200);
         myMenu.put("PopCorn", 225);
 
-        createCombinatios(myMenu, 500);
+        createCombinatios(myMenu, 400);
     }
 
     public static void createCombinatios(Map<String, Integer> menuProducts, int moneyAvailable){
@@ -53,9 +53,11 @@ public class coins {
             int actualProductPrice = menuProducts.get(actualProduct); //Coffe -> 100;
             menuProducts.remove(actualProduct);  //remuevo coffe.
 
+
             for (Map.Entry<String, Integer> prodPrice : menuProducts.entrySet()) {
                 combinationCost += prodPrice.getValue();
-            }    //Entramos con cake - popcorn -> 200 + 225 =425
+            }
+                //Entramos con cake - popcorn -> 200 + 225 =425
 
             if(combinationCost<=moneyAvailable){  //425<moneyAvailable (500)
                 System.out.println("this combination cost: " + combinationCost);

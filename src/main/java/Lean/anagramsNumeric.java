@@ -14,7 +14,7 @@ public class anagramsNumeric {
      **/
     public static void main(String[] args) {
         String line = "123 456 231 546 231 312 4556";
-        solution(line);
+        solution2(line);
     }
     public static void solution (String line){
         List<String> numbers = new ArrayList<>();
