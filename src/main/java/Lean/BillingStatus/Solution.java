@@ -138,9 +138,7 @@ public class Solution {
                 aux.setPaymentPennies(aux.getPaymentPennies() + paymentPennies);
                 aux.setAdDeliveryPennies(aux.getAdDeliveryPennies() + deliveryPennies);
             }else{
-                aux = new BillingStatus();
-                aux.setPaymentPennies(paymentPennies);
-                aux.setAdDeliveryPennies(deliveryPennies);
+                aux = new BillingStatus(deliveryPennies, paymentPennies);
             }
             output.put(userId, aux);
         }
