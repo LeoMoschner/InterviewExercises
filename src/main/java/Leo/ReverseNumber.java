@@ -27,7 +27,7 @@ public class ReverseNumber {
 
     public static void main(String[] args) {
 
-        int input2 = -232;
+        int input2 = -532;
         System.out.println(rever(input2) );
     }
 
@@ -41,14 +41,31 @@ public class ReverseNumber {
         }
 
         while (numb > 0) {
-            if (flag && answer * 10 > 230 || !flag && answer * 10 > 231) {
+            if (flag && answer * 10 +numb > 230 || !flag && answer * 10 + numb > 231) {
                 return 0;
             } else {
                 answer = answer * 10 + numb % 10;
                 numb = numb / 10;
             }
         }
-        if (answer <= -231 || answer > 230) return 0;
         return (flag) ? answer * -1 : answer;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
