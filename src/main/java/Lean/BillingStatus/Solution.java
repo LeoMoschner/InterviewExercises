@@ -117,8 +117,7 @@ public class Solution {
             int paymentPennies = 0, deliveryPennies = 0;
             BillingStatus aux;
             for(Map.Entry<String, Integer> secondEntry: firstEntry.getValue().entrySet()){
-                String key = secondEntry.getKey();
-                switch (key){
+                switch (secondEntry.getKey()){
                     case "user_id":{
                         userId = secondEntry.getValue();
                         break;
