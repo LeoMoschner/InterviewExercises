@@ -6,6 +6,6 @@ public class PalindromeRearranged {
 
 
 
-    asdfasdfasdf
+
 
 }
