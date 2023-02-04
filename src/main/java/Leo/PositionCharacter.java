@@ -1,5 +1,9 @@
 package Leo;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 public class PositionCharacter {
 
     /**
@@ -8,5 +12,27 @@ public class PositionCharacter {
 
 
 
+public static void main(String [] args){
 
+    String word = "asdasdlgk";
+
+}
+
+
+public static void wordsPositions(String input){
+
+    Map<Character, List<Integer>> pos = new HashMap<>();
+
+
+    for(int i = 0; i<input.length(); i++){
+
+
+
+
+    }
+
+
+
+
+}
 }
