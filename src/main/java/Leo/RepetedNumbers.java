@@ -46,7 +46,6 @@ public class RepetedNumbers {
             mySet.add(numbers);
         }
         return true;
-
     }
 
     //i can put everything inside a Map, then ask if there is any key that has a value bigger than 1-> False
@@ -61,11 +60,9 @@ public class RepetedNumbers {
                 myMap.put(numbers, 1);
             }
         }
-
         for (int numb : input) {
             if (myMap.get(numb) > 1) return false;
         }
-
         return true;
     }
 
