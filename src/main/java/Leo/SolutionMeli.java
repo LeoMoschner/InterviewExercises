@@ -1,14 +1,11 @@
 package Leo;
 
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 // Main class should be named 'Solution'
-class Solution {
+class SolutionMel {
     public static void main(String[] args) {
         System.out.println("Hello, World");
     }

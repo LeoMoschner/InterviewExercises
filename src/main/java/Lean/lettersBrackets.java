@@ -1,17 +1,17 @@
 package Lean;
 
 /**
- * 3. Given this input: “3[asd]” you have to generate an output string: asdasdasd
+ * 3. Given this input: "3[asd]" you have to generate an output string: asdasdasd
  * # Q1
- * ## input => “2[asd]”
- * ## output => “asdasdasd”
+ * ## input => "2[asd]"
+ * ## output => "asdasdasd"
  * # Q2
- * ## input => “3[a]4[b]”
- * ## output => “aaabbbb”
+ * ## input => "3[a]4[b]"
+ * ## output => "aaabbbb"
  * # Q3
- * ## input => “3[a2[b]]”
- * ## interim output => “3[abb]”
- * ## output => “abbabbabb” (edited)
+ * ## input => "3[a2[b]]"
+ * ## interim output => "3[abb]"
+ * ## output => "abbabbabb" (edited)
  */
 
 public class lettersBrackets {

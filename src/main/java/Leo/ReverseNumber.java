@@ -8,8 +8,8 @@ public class ReverseNumber {
     // # Assume the environment does not allow you to store 64-bit integers (signed or unsigned).
 
 // # Example 1:
-// # Input: x = 321
-// # Output: 123  tiene que ser 0
+// # Input: x = 123
+// # Output: 321  tiene que ser 0
 
 // # Example 2:
 // # Input: x = -123
