@@ -13,8 +13,8 @@ import java.util.Map;
 public class anagramsWord {
 
     public static void main(String[] args) {
-        String firstWord = "hidude";
-        String secondWord = "dudahi";
+        String firstWord = "hola";
+        String secondWord = "laoh";
 
         System.out.println(isAnagram(firstWord, secondWord));
         System.out.println(isAnagramMapI(firstWord, secondWord));
@@ -53,6 +53,7 @@ public class anagramsWord {
         char[] secondAux = second.toCharArray();
         Arrays.sort(firstAux);
         Arrays.sort(secondAux);
+        Arrays.equals(firstAux, secondAux);
 
         for (int i = 0; i < firstAux.length; i++) {
             firstMap.put(i, firstAux[i]);
