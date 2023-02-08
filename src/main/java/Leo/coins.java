@@ -47,12 +47,10 @@ public class coins {
         for(String product: menuProducts.keySet()){
             listOfProducts.add(product);
         }
-
         for(String actualProduct : listOfProducts){
             int combinationCost=0;
             int actualProductPrice = menuProducts.get(actualProduct); //Coffe -> 100;
             menuProducts.remove(actualProduct);  //remuevo coffe.
-
 
             for (Map.Entry<String, Integer> prodPrice : menuProducts.entrySet()) {
                 combinationCost += prodPrice.getValue();

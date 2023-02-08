@@ -39,8 +39,6 @@ public class TwoSumTarget {
         return null;
     }
 
-
-
     //SI PIDE MAP HACER ESTO
     public static boolean canSum(int [] intArray, int target){
         Map<Integer, Integer> map = new HashMap<>();
@@ -51,6 +49,7 @@ public class TwoSumTarget {
         }
         return false;
     }
+
     //SI PIDE HASHSET HACER ESTo
     public static boolean setCanSum(int [] intArray, int target){
         HashSet<Integer> myHashSet = new HashSet<>();

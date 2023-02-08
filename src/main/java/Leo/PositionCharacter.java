@@ -15,29 +15,25 @@ public class PositionCharacter {
 public static void main(String [] args){
 
     String word = "asdasdlgk";
-    wordsPositions(word
-    );
-
+    wordsPositions(word);
 }
 
 
 public static void wordsPositions(String input){
-
     char [] inputChar = input.toCharArray();
 
-    Map<Character, String> pos = new HashMap<>();
+    Map<Character, String> positions = new HashMap<>();
 
     for(int i = 0; i<inputChar.length; i++){
-
-        if(pos.containsKey(inputChar[i])){
-            pos.put(inputChar[i], pos.get(inputChar[i]) + " " + i);
+        if(positions.containsKey(inputChar[i])){
+            positions.put(inputChar[i], positions.get(inputChar[i]) + " " + i);
         }else {
-            pos.put(inputChar[i], String.valueOf(i));
+            positions.put(inputChar[i], String.valueOf(i));
         }
     }
-    System.out.println(pos);
+    System.out.println(positions);
 
-    for (Map.Entry let : pos.entrySet()){
+    for (Map.Entry let : positions.entrySet()){
         System.out.println("The character: "+ let.getKey() + " is on positions: " + let.getValue());
 
     }

@@ -16,7 +16,6 @@ public class isogram {
     public static void main(String[] args) {
 
         String word = "word";
-
         //System.out.println(isIsogramSet(word));
         System.out.println(isIsogramMap(word));
 

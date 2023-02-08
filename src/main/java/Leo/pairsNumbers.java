@@ -14,7 +14,7 @@ public class pairsNumbers {
 
     public static void main(String[] args) {
 
-        int [] numbs = {2, 5, 6, 10, 54, 23};
+        int [] numbs = {2, 5, 6};
 
         System.out.println(Arrays.deepToString(thePairs(numbs)));
     }
@@ -22,11 +22,11 @@ public class pairsNumbers {
     //all the combs will be  (lenght**2 - length)/2
     public static int[][] thePairs(int[] numbers) {
 
-        // Since we need the size of the matrix, we need to calculate:
-        int size = ((numbers.length*numbers.length)-numbers.length) /2;
+        // Since we need the rows of the matrix, we need to calculate:
+        int rows = ((numbers.length*numbers.length)-numbers.length) /2;
 
-        //now i can create the matriz with size and 1;
-        int[][] pairs = new int[size][2];
+        //now i can create the matriz with rows and 1;
+        int[][] pairs = new int[rows][2];
 
         for (int i = 0, line =0; i < numbers.length-1; i++ ) {
             for (int j = i+1; j < numbers.length; j++) {
@@ -37,6 +37,4 @@ public class pairsNumbers {
         }
         return pairs;
     }
-
-
 }

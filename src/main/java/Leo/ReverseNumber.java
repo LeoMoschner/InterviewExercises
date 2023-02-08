@@ -27,7 +27,7 @@ public class ReverseNumber {
 
     public static void main(String[] args) {
 
-        int input2 = -532;
+        int input2 = 221;
         System.out.println(rever(input2) );
     }
 
@@ -41,6 +41,7 @@ public class ReverseNumber {
         }
 
         while (numb > 0) {
+            //PONER PRIMERO  if (flag && numb > 230 || !flag && numb > 231). despues el answer x 10
             if (flag && answer * 10 +numb > 230 || !flag && answer * 10 + numb > 231) {
                 return 0;
             } else {
@@ -50,6 +51,19 @@ public class ReverseNumber {
         }
         return (flag) ? answer * -1 : answer;
     }
+
+    /**
+     *
+     *          Integer.parseInt("number in string format", 10);
+     *          using 10 you convert any string number into decimal . So you can
+     *          operate with "0010"
+     *
+     *
+     *        StringBuilder myNumb=new StringBuilder("0"+Integer.toOctalString(numb));
+     *         System.out.println(myNumb.reverse());
+     *         long reformatedInt = Integer.valueOf(myNumb.toString());
+     *         System.out.println("this is my new number" + reformatedInt);
+     */
 }
 
 

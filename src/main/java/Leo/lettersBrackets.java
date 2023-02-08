@@ -1,7 +1,5 @@
 package Leo;
 
-import java.util.function.DoubleToIntFunction;
-
 /**
  * 3. Given this input: "3[asd]" you have to generate an output string: asdasdasd
  * # Q1
@@ -22,20 +20,28 @@ public class lettersBrackets {
 
         String input = "2[asd]";
         String inputTwo = "2[a]2[b]";
+        String inputTwoMore = "21[a]22[b]";
+        String lauchi = "10[a1[b]]";
         String inputThree = "asd2[a]2[b2[c]]";
-        System.out.println(lettersMultiplieII(inputThree));
+
+        System.out.println(lettersMultipliedI(input));
+
+        System.out.println(moreNumbers(lauchi));
+        System.out.println(moreNumbers(inputTwo));
+        System.out.println(moreNumbers(inputTwoMore));
+        System.out.println(moreNumbers(inputThree));
     }
 
-    public static String lettersMultipliedI(String input){
+    public static String lettersMultipliedI(String input) {
         //for this first case i will use 2 indexes because i will need to get
         //the opening and closing brackets.
-        int open=input.indexOf("[");
+        int open = input.indexOf("[");
         int close = input.indexOf("]");
 
-        //now i have to multiply what are inside the open and close, with the number
-        String middleWord = input.substring(open+1, close);
-        input= middleWord.repeat(Character.getNumericValue(input.charAt(open-1)));
-        return input;
+        //now i have to multiply what is inside the open and close, with the number
+        String middleWord = input.substring(open + 1, close);
+
+        return middleWord.repeat(Character.getNumericValue(input.charAt(open - 1)));
     }
 
     public static String lettersMultiplieII(String input) {
@@ -43,15 +49,47 @@ public class lettersBrackets {
         String openBracket = "[";
         //For resolving the third case, i just need to change the open integer method.
         // open=input.lastIndexOf(openBracket);
-        while (input.contains(openBracket)) {
-            open = input.lastIndexOf(openBracket);
+
+            while (input.contains("[")) {
+                open = input.indexOf("[");
+                close = input.indexOf("]", open);
+
+                String subs = input.substring(open + 1, close);
+
+                int number = Character.getNumericValue(input.charAt(open - 1));
+
+                input = input.replace(input.substring(open - 1, close + 1), subs.repeat(number));
+            }
+            return input;
+    }
+
+    public static String moreNumbers(String input) {
+
+        String regForNumber = "[0-9]";
+
+        int open, close, actualPosition, previusActual;
+
+        while (input.contains("[")) {
+            open = input.lastIndexOf("[");
             close = input.indexOf("]", open);
 
-            String middleWord = input.substring(open + 1, close);
+            String subString = input.substring(open+1, close);
 
-            input = input.replace(input.substring(open - 1, close + 1),
-                    middleWord.repeat(Character.getNumericValue(input.charAt(open - 1))));
+
+            actualPosition = open;
+            previusActual = open-1;
+
+            while (actualPosition>0 && input.substring(previusActual, actualPosition ).matches(regForNumber)){
+                previusActual--;
+                actualPosition--;
+                if(previusActual==0)actualPosition--;
+            }
+
+            Integer repeat = Integer.valueOf(input.substring(actualPosition, open));
+
+            input=input.replace(input.substring(actualPosition, close+1), subString.repeat(repeat));
         }
+
         return input;
 
     }

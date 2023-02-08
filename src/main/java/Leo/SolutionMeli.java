@@ -13,11 +13,12 @@ class SolutionMel {
 
 class InputClassJava {
 
+
+
     /**
-     * Call generateDataInMapFormat to get input data, it is a map with key as date and value
-     * is DateEntry. Each entry represents this json object:
-     *
-     * "2020-01-20": {
+     *What data structures will you use to manipulate this Json?
+     * HashMap: Map <Fecha, Map <Platform, Map<page/uniques, Integer> myMap= new HashMap<>();
+     * * "2020-01-20": {
      *             "android": {
      *               "pageviews": 1048749,
      *               "uniques": 283306
@@ -39,10 +40,6 @@ class InputClassJava {
      *               "uniques": 196448
      *             }
      *           }
-     *
-     *
-     *
-     * @return
      */
 
 

@@ -33,7 +33,7 @@ public class palindrome {
         word.toLowerCase();
 
         //Now, i will compare the first Vs the last letter word.lenght-1 (because i will get a excep)
-        for (int i=0; i<word.length(); i++){
+        for (int i=0 ; i<word.length(); i++){
             if(word.charAt(i)!=word.charAt(word.length()-1-i)) return false;
         }
         return true;

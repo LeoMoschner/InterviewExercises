@@ -14,23 +14,18 @@ public class anagramsWord {
 
     public static void main(String[] args) {
         String firstWord = "hidude";
-        String secondWord = "dudahi";
+        String secondWord = "dudehi";
 
-        System.out.println(isAnagram(firstWord, secondWord));
-        System.out.println(isAnagramMapI(firstWord, secondWord));
-        System.out.println(isAnagramMapII(firstWord, secondWord));
+
+        System.out.println(oneMapOnly(firstWord, secondWord));
     }
 
     //For this exercises i have several ways to solved it
     //I'm thinking that first i can ask if the lenght are the same, if not return false.
-
     public static boolean isAnagram(String first, String second) {
-
         //The easy way will be to create to char arrays,
         //Then use the method Arrays.sort and return the Arrays.equals method
-
         if (first.length() != second.length()) return false;
-
         char[] firstAux = first.toCharArray();
         char[] secondAux = second.toCharArray();
 
@@ -39,27 +34,6 @@ public class anagramsWord {
         return Arrays.equals(firstAux, secondAux);
     }
 
-    //Using map i think of 2 ways: one, using the same sort than before and then
-    // using a for loop, overload two maps. Then use equals method to return.
-    //Second way, inside a for loop overload 2 maps asking if it has the key and
-    //adding value.
-    public static boolean isAnagramMapI(String first, String second) {
-        if (first.length() != second.length()) return false;
-
-        Map<Integer, Character> firstMap = new HashMap<>();
-        Map<Integer, Character> secondMap = new HashMap<>();
-
-        char[] firstAux = first.toCharArray();
-        char[] secondAux = second.toCharArray();
-        Arrays.sort(firstAux);
-        Arrays.sort(secondAux);
-
-        for (int i = 0; i < firstAux.length; i++) {
-            firstMap.put(i, firstAux[i]);
-            secondMap.put(i, secondAux[i]);
-        }
-        return firstMap.equals(secondMap);
-    }
     public static boolean isAnagramMapII(String first, String second) {
         if (first.length() != second.length()) return false;
 
@@ -82,10 +56,29 @@ public class anagramsWord {
         return firstAux.equals(secondAux);
     }
 
+    public static boolean oneMapOnly(String first, String second) {
+        if (first.length() != second.length()) return false;
+        Map<Character, Integer> auxMap = new HashMap<>();
 
-    //USAR 1 palabra en lista y remover cuando se encuentra.
-    //al final preguntas si la lista esta vacia.
+        for (int i = 0; i < first.length(); i++) {
+            Character letter = first.charAt(i);
+            Character secondLetter = second.charAt(i);
 
-    //con doble for, haciendo replace y dejando un espacio vacio. Ver si se puede
+            if (auxMap.containsKey(letter)) {
+                auxMap.replace(letter, auxMap.get(letter) + 1);
+            } else {
+                auxMap.put(letter, 1);
+            }
+            if (auxMap.containsKey(secondLetter)) {
+                auxMap.replace(secondLetter, auxMap.get(secondLetter) - 1);
+            } else {
+                auxMap.put(secondLetter, -1);
+            }
+        }
+        for (Integer mymap : auxMap.values()) {
+            if (mymap != 0) return false;
+        }
+        return true;
+    }
 
 }

@@ -7,15 +7,12 @@ public class PalindromeRearranged {
 
     //given a String determine if it can be rearranged as a palindrome
 
-
     public static void main(String[] args) {
         String input = "larutanatural";
-        String inputSecond = "mmnnj";
+        String inputSecond = "amumu";
 
         System.out.println(isPalindromeNow(inputSecond));
-
     }
-
 
     public static boolean isPalindromeNow(String input) {
         int auxCount = 0;
