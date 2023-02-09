@@ -26,10 +26,9 @@ public class lettersBrackets {
 
         System.out.println(lettersMultipliedI(input));
 
-        System.out.println(moreNumbers(lauchi));
-        System.out.println(moreNumbers(inputTwo));
-        System.out.println(moreNumbers(inputTwoMore));
-        System.out.println(moreNumbers(inputThree));
+        System.out.println(lettersMultiplieII(inputTwo));
+        System.out.println(lettersMultiplieII(inputTwoMore));
+        System.out.println(lettersMultiplieII(inputThree));
     }
 
     public static String lettersMultipliedI(String input) {
@@ -37,7 +36,6 @@ public class lettersBrackets {
         //the opening and closing brackets.
         int open = input.indexOf("[");
         int close = input.indexOf("]");
-
         //now i have to multiply what is inside the open and close, with the number
         String middleWord = input.substring(open + 1, close);
 
@@ -49,14 +47,11 @@ public class lettersBrackets {
         String openBracket = "[";
         //For resolving the third case, i just need to change the open integer method.
         // open=input.lastIndexOf(openBracket);
-
             while (input.contains("[")) {
-                open = input.indexOf("[");
+                open = input.lastIndexOf("[");
                 close = input.indexOf("]", open);
-
                 String subs = input.substring(open + 1, close);
-
-                int number = Character.getNumericValue(input.charAt(open - 1));
+                int number = Character.valueOf(input.charAt(open - 1));
 
                 input = input.replace(input.substring(open - 1, close + 1), subs.repeat(number));
             }
@@ -64,10 +59,8 @@ public class lettersBrackets {
     }
 
     public static String moreNumbers(String input) {
-
         String regForNumber = "[0-9]";
-
-        int open, close, actualPosition, previusActual;
+        int open, close, actualPosition;
 
         while (input.contains("[")) {
             open = input.lastIndexOf("[");
@@ -75,23 +68,63 @@ public class lettersBrackets {
 
             String subString = input.substring(open+1, close);
 
-
             actualPosition = open;
-            previusActual = open-1;
 
-            while (actualPosition>0 && input.substring(previusActual, actualPosition ).matches(regForNumber)){
-                previusActual--;
+            while (actualPosition>0 && input.substring(actualPosition-1, actualPosition )
+                            .matches(regForNumber)){
                 actualPosition--;
-                if(previusActual==0)actualPosition--;
             }
 
             Integer repeat = Integer.valueOf(input.substring(actualPosition, open));
 
-            input=input.replace(input.substring(actualPosition, close+1), subString.repeat(repeat));
+            input=input.replace(input.substring(actualPosition, close+1),
+                    subString.repeat(repeat));
         }
-
         return input;
 
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
